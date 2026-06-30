@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#050816,#0f172a,#111827);
+    padding:20px;
+}
+
+.container{
+    width:100%;
+    max-width:850px;
+    background:#111827;
+    border-radius:20px;
+    padding:35px;
+    box-shadow:
+    0 0 20px #00ffff30,
+    0 0 40px #00ffff20;
+}
+
+h1{
+    text-align:center;
+    color:#00ffff;
+    margin-bottom:30px;
+    font-size:2.2rem;
+    text-shadow:0 0 10px #00ffff;
+}
+
+.input-section{
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr auto;
+    gap:12px;
+}
+
+.input-section input{
+    padding:14px;
+    border:2px solid #00ffff;
+    border-radius:12px;
+    background:#1f2937;
+    color:white;
+    outline:none;
+    transition:0.3s;
+}
+
+.input-section input:focus{
+    box-shadow:0 0 15px #00ffff;
+}
+
+.input-section button{
+    background:#00ffff;
+    color:#000;
+    border:none;
+    padding:14px;
+    border-radius:12px;
+    cursor:pointer;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.input-section button:hover{
+    transform:translateY(-3px);
+    box-shadow:0 0 20px #00ffff;
+}
+
+#taskList{
+    margin-top:25px;
+}
+
+.task{
+    background:#1f2937;
+    border-left:5px solid #00ffff;
+    border-radius:15px;
+    padding:18px;
+    margin-bottom:15px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    transition:0.3s;
+    animation:slideUp .4s ease;
+}
+
+.task:hover{
+    transform:translateY(-4px);
+    box-shadow:0 0 15px #00ffff70;
+}
+
+.task-info{
+    flex:1;
+}
+
+.task-text{
+    color:white;
+    font-size:17px;
+    font-weight:600;
+}
+
+.task-date{
+    color:#cbd5e1;
+    margin-top:5px;
+    font-size:13px;
+}
+
+.completed .task-text{
+    text-decoration:line-through;
+    color:#94a3b8;
+}
+
+.actions{
+    display:flex;
+    gap:8px;
+}
+
+.actions button{
+    border:none;
+    padding:10px 14px;
+    border-radius:10px;
+    cursor:pointer;
+    color:white;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.complete{
+    background:#00ff88;
+    color:black;
+}
+
+.complete:hover{
+    box-shadow:0 0 15px #00ff88;
+}
+
+.edit{
+    background:#ffae00;
+    color:black;
+}
+
+.edit:hover{
+    box-shadow:0 0 15px #ffae00;
+}
+
+.delete{
+    background:#ff004c;
+}
+
+.delete:hover{
+    box-shadow:0 0 15px #ff004c;
+}
+
+.actions button:hover{
+    transform:scale(1.08);
+}
+
+@keyframes slideUp{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@media(max-width:768px){
+
+    .input-section{
+        grid-template-columns:1fr;
+    }
+
+    .task{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:15px;
+    }
+
+    .actions{
+        width:100%;
+    }
+
+    .actions button{
+        flex:1;
+    }
+}
